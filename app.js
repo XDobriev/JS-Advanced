@@ -1,19 +1,24 @@
 'use strict'
 
-const flights = ['Russia', 'USA', 'London', 'London', 'USA'];
+const weatherMap = new Map();
+weatherMap
+    .set('London', '10')
+    .set('Moscow', '7')
 
-const setFlights = new Set(flights);
-console.log(setFlights);
-console.log(setFlights.size);
-console.log(setFlights.has('Russia'));
-setFlights.add('Paris');
-setFlights.delete('London');
-console.log(setFlights);
-/* setFlights.clear(); */
-console.log(setFlights);
+console.log(weatherMap.get('Moscow'));
+console.log(weatherMap.get('Mosco'));
+console.log(weatherMap.has('Mosco'));
+console.log(weatherMap.has('Moscow'));
+/* console.log(weatherMap.delete('Moscow')); */
 
-for (const flight of setFlights) {
-    console.log(flight);
-}
-
-console.log([...setFlights]);
+const arr = [1, 2, 3]
+weatherMap
+    .set(11, 5)
+    .set(true, 'yes')
+    .set(false, 'no')
+    .set(arr, 'array')
+    .set({a: 1}, {b: 1})
+console.log(weatherMap);
+console.log(weatherMap.size);
+console.log(weatherMap.get(arr));
+console.log(weatherMap.get(arr));
