@@ -1,17 +1,19 @@
 'use strict'
 
-const weatherMap = new Map([
-    ['London', 10],
-    ['Moscow', 7],
-    ['Paris', 14],
-])
-console.log(weatherMap);
-
-for (const [key, value] of weatherMap) {
-    console.log(key);
-    console.log(value);
+const user1 = {
+   name: 'Vasia',
+   birthday: '12/23/2022'
 }
 
-console.log([...weatherMap]);
-console.log([...weatherMap.keys()]);
-console.log([...weatherMap.values()]);
+function isBirthday(user) {
+    const birthdayDate = new Date (user.birthday);
+    const now = new Date()
+    if (birthdayDate.getMonth() !== now.getMonth()) {
+        return false
+    }
+    if (birthdayDate.getDate() !== now.getDate()) {
+        return false
+    }
+    return true
+}
+console.log(isBirthday(user1));
