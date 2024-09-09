@@ -1,13 +1,19 @@
 'use strict'
 
-const interval = setInterval(() => {
-    console.log(new Date());
-}, 1000)
+function pizzaTimer(ms) {
+    const end = new Date().getTime() + ms;
+    const interval = setInterval(() => {
+        console.log(
+            new Intl.DateTimeFormat('ru-Ru', {
+                minute: 'numeric',
+                second: 'numeric',
+            }).format(end + 100 - new Date())
+        );
+    }, 1000);
+    setTimeout(() => {
+        clearInterval(interval);
+        console.log('Pizza!!!');
+    }, ms)
+}
 
-const timer = setTimeout(() => {
-    clearInterval(interval)
-}, 5000)
-
-
-console.log(interval);
-console.log(timer);
+pizzaTimer(58000)
