@@ -25,3 +25,6 @@ console.log(lordOftheRing.__proto__);
 console.log(lordOftheRing.__proto__ === Book.prototype);
 console.log(Book.prototype.isPrototypeOf(lordOftheRing));
 console.log(Book.prototype.isPrototypeOf(Book));
+console.log(Book.prototype.isPrototypeOf(Book));
+
+//test
